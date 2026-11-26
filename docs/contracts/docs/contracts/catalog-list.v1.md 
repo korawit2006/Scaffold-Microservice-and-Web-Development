@@ -1,0 +1,46 @@
+# API รายการสินค้า
+สถานะ: PROPOSED
+รุ่น: v1
+เจ้าของข้อเสนอ: Microservice
+Query
+avilble = true - ได้pencil,eraser ที่มีสถานะtrue
+avilble = false - ได้ruler,sharpeher ที่มีสถานะfalse
+avilble = yes - ถูกปฏิเสธได้ Error 422
+avilble   -   ได้สินค้าทั้งหมด
+
+
+field
+      "id": "pencil",
+      "productName": "ดินสอ",
+docs/microservices/week4-catalog-pla      "priceSatang": 1200,
+      "available": true,
+    {
+    
+      "id": "ruler",
+      "productName": "ไม้บรรทัด",
+      "priceSatang": 2000,
+      "available": false,
+     {
+
+    {
+      "id": "eraser",
+      "productName": "ยางลบ",
+      "priceSatang": 800,
+      "available": true,
+
+    }
+      "id": "sharpener",
+      "productName": "กบเหลาดินสอ",
+      "priceSatang": 1500,
+      "available": false,
+     }
+    }     
+
+
+กรณีผิดพลาด 
+ ส่งค่า available ?  ข้อมูลผิดรูปแบบ เพราะส่งค่า available เป็นอย่างอื่นที่ไม่ใช่ true หรือ false 
+
+
+คำขอ: GET /api/v1/catalog/products
+Request body: ไม่ส่ง
+Query: available = true
